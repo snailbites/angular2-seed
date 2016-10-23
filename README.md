@@ -255,10 +255,10 @@ Forks of this project demonstrate how to extend and integrate with other librari
 │       │       │   └── env.config.ts
 │       │       ├── index.ts
 │       │       ├── shared.module.ts
-│       │       ├── name-list
+│       │       ├── blog-list
 │       │       │   ├── index.ts
-│       │       │   ├── name-list.service.spec.ts
-│       │       │   └── name-list.service.ts
+│       │       │   ├── blog-list.service.spec.ts
+│       │       │   └── blog-list.service.ts
 │       │       ├── navbar
 │       │       │   ├── index.ts
 │       │       │   ├── navbar.component.css

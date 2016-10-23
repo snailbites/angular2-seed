@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NameListService } from '../shared/index';
+import { BlogListService } from '../shared/index';
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -19,11 +19,11 @@ export class HomeComponent implements OnInit {
 
   /**
    * Creates an instance of the HomeComponent with the injected
-   * NameListService.
+   * BlogListService.
    *
-   * @param {NameListService} nameListService - The injected NameListService.
+   * @param {BlogListService} BlogListService - The injected BlogListService.
    */
-  constructor(public nameListService: NameListService) {}
+  constructor(public BlogListService: BlogListService) {}
 
   /**
    * Get the names OnInit
@@ -33,25 +33,14 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * Handle the nameListService observable
+   * Handle the BlogListService observable
    */
   getNames() {
-    this.nameListService.get()
+    this.BlogListService.get()
 		     .subscribe(
 		       names => this.names = names,
 		       error =>  this.errorMessage = <any>error
 		       );
-  }
-
-  /**
-   * Pushes a new name onto the names array
-   * @return {boolean} false to prevent default form submit behavior to refresh the page.
-   */
-  addName(): boolean {
-    // TODO: implement nameListService.post
-    this.names.push(this.newName);
-    this.newName = '';
-    return false;
   }
 
 }
