@@ -1,7 +1,14 @@
-<p>
-  Howdy! Here's a list of awesome computer scientists. Do you know any others? Add to the list yourself.
-</p>
+<div role="main">
+  <article *ngFor="let blog of blogs">
+    <h3><a href="/blog/{{blog.url}}">{{blog.name}}</a></h3>
+    <p>{{blog.date}}</p>
+    <p>{{blog.desc}}</p>
 
-<ul>
-  <li *ngFor="let name of names">{{name}}</li>
-</ul>
+    <a [routerLink]="['/blog/' + blog.url ]" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">BLOG</a>
+
+  </article>
+
+  <hr>
+
+  <a [routerLink]="['/blog']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">BLOG</a>
+</div>

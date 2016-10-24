@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   newName: string = '';
   errorMessage: string;
-  names: any[] = [];
+  blogs: any[] = [];
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -29,16 +29,16 @@ export class HomeComponent implements OnInit {
    * Get the names OnInit
    */
   ngOnInit() {
-    this.getNames();
+    this.getBlogs();
   }
 
   /**
    * Handle the BlogListService observable
    */
-  getNames() {
+  getBlogs() {
     this.BlogListService.get()
 		     .subscribe(
-		       names => this.names = names,
+		       blogs => this.blogs = blogs,
 		       error =>  this.errorMessage = <any>error
 		       );
   }
